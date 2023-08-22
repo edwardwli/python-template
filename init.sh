@@ -27,6 +27,7 @@ do
   case "${opt}" in
     h)
       usage
+      echo "Rename project template."
       exit 0
       ;;
     *)
