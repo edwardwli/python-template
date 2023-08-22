@@ -1,0 +1,12 @@
+__pycache__/
+
+# build artifacts
+/build/
+/dist/
+*.egg-info/
+
+# virtual environment
+venv/
+
+# version file
+/src/python_template/_version.py

@@ -1,0 +1,41 @@
+[version]
+source = "vcs"
+
+[build.hooks.vcs]
+version-file = "src/python_template/_version.py"
+
+[envs.default]
+dependencies = [
+  "pytest",
+]
+
+[envs.default.scripts]
+test = "pytest {args:tests}"
+
+[envs.lint]
+detached = true
+dependencies = [
+  "black",
+  "mypy",
+  "pyright",
+  "ruff",
+]
+
+[envs.lint.scripts]
+typing = [
+  "mypy --install-types --non-interactive {args:src/python_template tests}",
+  "pyright {args:src/python_template tests}",
+]
+style = [
+  "black --check --diff {args:.}",
+  "ruff {args:.}",
+]
+fmt = [
+  "black {args:.}",
+  "ruff --fix {args:.}",
+  "style",
+]
+all = [
+  "style",
+  "typing",
+]
