@@ -23,8 +23,8 @@ dependencies = [
 
 [envs.lint.scripts]
 typing = [
-  "mypy --install-types --non-interactive {args:src/python_template tests}",
-  "pyright {args:src/python_template tests}",
+  "mypy --install-types --non-interactive",
+  "pyright",
 ]
 style = [
   "black --check --diff {args:.}",
